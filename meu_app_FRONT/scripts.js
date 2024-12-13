@@ -54,7 +54,7 @@ const postItem = async (inputFuncionario, inputVenda, inputPorcentagem) => {
     })
     .catch((error) => {
       console.error('Erro:', error);
-      alert("Ocorreu um erro ao adicionar o funcionário.");
+      alert("Funcionário já cadastrado.");
     });
 };
 
@@ -125,7 +125,7 @@ const newItem = () => {
   if (inputFuncionario === '') {
     alert("Escreva o nome do funcionário!");
   } else if (isNaN(inputVenda) || isNaN(inputPorcentagem)) {
-    alert("Vendas e porcentagem precisam ser números!");
+    alert("Vendas e porcentagem precisam ser preenchidos!");
   } else {
     // Chama a função de POST para enviar os dados e atualizar a lista automaticamente
     postItem(inputFuncionario, inputVenda, inputPorcentagem);
