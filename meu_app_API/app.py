@@ -42,7 +42,7 @@ def add_funcionario(form: FuncionarioSchema):
         nome=form.nome,
         venda=form.venda,
         porcentagem=form.porcentagem,
-        comissao=comissao  # Inclui a comissão calculada
+        comissao=comissao
     )
     logger.debug(f"Adicionando funcionario de nome: '{funcionario.nome}'")
 
