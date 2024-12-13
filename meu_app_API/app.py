@@ -34,7 +34,10 @@ def add_funcionario(form: FuncionarioSchema):
     """
 
     # Calcula a comissão com base nas vendas e porcentagem
-    comissao = form.venda * (form.porcentagem / 100)
+    venda = float(form.venda)
+    porcentagem = float(form.porcentagem)
+    comissao = venda * (porcentagem / 100)
+
     funcionario = Funcionario(
         nome=form.nome,
         venda=form.venda,

@@ -35,18 +35,28 @@ const postItem = async (inputFuncionario, inputVenda, inputPorcentagem) => {
   formData.append('nome', inputFuncionario);
   formData.append('venda', inputVenda);
   formData.append('porcentagem', inputPorcentagem);
-  
 
   let url = 'http://127.0.0.1:5000/funcionario';
   fetch(url, {
     method: 'post',
     body: formData
   })
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Erro na requisição: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      // Atualiza a lista diretamente com o dado retornado do back-end
+      insertList(data.nome, data.venda, data.porcentagem, data.comissao);
+      alert("Funcionário adicionado com sucesso!");
+    })
     .catch((error) => {
-      console.error('Error:', error);
+      console.error('Erro:', error);
+      alert("Ocorreu um erro ao adicionar o funcionário.");
     });
-}
+};
 
 
 /*
@@ -101,27 +111,27 @@ const deleteItem = (item) => {
     });
 }
 
+
 /*
   --------------------------------------------------------------------------------------
   Função para adicionar um novo item com nome, venda e porcentagem  
   --------------------------------------------------------------------------------------
 */
 const newItem = () => {
-  let inputFuncionario = document.getElementById("novoFuncionario").value; //nome
-  let inputVenda = document.getElementById("novaVenda").value; //vendas
-  let inputPorcentagem = document.getElementById("novaPorcentagem").value; //porcentagem
-  
+  let inputFuncionario = document.getElementById("novoFuncionario").value; // Nome
+  let inputVenda = parseFloat(document.getElementById("novaVenda").value); // Vendas
+  let inputPorcentagem = parseFloat(document.getElementById("novaPorcentagem").value); // Porcentagem
 
   if (inputFuncionario === '') {
-    alert("Escreva o nome de um item!");
+    alert("Escreva o nome do funcionário!");
   } else if (isNaN(inputVenda) || isNaN(inputPorcentagem)) {
-    alert("Salário e porcentagem precisam ser números!");
+    alert("Vendas e porcentagem precisam ser números!");
   } else {
-    insertList(inputFuncionario,inputVenda, inputPorcentagem)
-    postItem(inputFuncionario, inputVenda, inputPorcentagem)
-    alert("Item adicionado!")
+    // Chama a função de POST para enviar os dados e atualizar a lista automaticamente
+    postItem(inputFuncionario, inputVenda, inputPorcentagem);
   }
-}
+};
+
 
 /*
   --------------------------------------------------------------------------------------

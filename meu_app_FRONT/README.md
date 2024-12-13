@@ -7,4 +7,4 @@ O objetivo aqui é ilustrar a interface do MVP de cálculo de comissões de func
 ---
 ## Como executar
 
-Basta fazer o download do projeto e abrir o arquivo index.html no seu browser.
+Clone o repositório completo, ative a API e abra o arquivo index.html no seu browser.

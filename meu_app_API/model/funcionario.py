@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Integer, DateTime, Float
+from sqlalchemy import Column, String, Integer, DateTime, Float, Numeric
 from datetime import datetime
 from typing import Union
 from  model import Base
@@ -9,12 +9,12 @@ class Funcionario(Base):
 
     id = Column("pk_funcionario", Integer, primary_key=True)
     nome = Column(String(140), unique=True)
-    venda = Column(Float)
-    porcentagem = Column(Integer)
-    comissao = Column(Float)
+    venda = Column(Numeric(15, 2))
+    porcentagem = Column(Numeric(4, 2))
+    comissao = Column(Numeric(15, 2))
 
 
-    def __init__(self, nome:str, venda:float, porcentagem:int, comissao:float):
+    def __init__(self, nome:str, venda:float, porcentagem:float, comissao:float):
         """
         Cria um Funcionario
 
