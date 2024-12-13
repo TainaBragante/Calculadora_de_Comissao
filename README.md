@@ -1,2 +1,3 @@
 # MVP1
- Meu primeiro MVP da PUC
+ 
+ Este pequeno projeto demonstra na prática conceitos essenciais de desenvolvimento **Full Stack Básico**. Trata-se de um MVP (Minimum Viable Product) criado para implementar uma solução funcional para cálculo de comissões de funcionários.
