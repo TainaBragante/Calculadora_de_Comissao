@@ -7,8 +7,8 @@ class FuncionarioSchema(BaseModel):
     """ Define como um novo funcionario a ser inserido deve ser representado
     """
     nome: str = "Fulano de tal"
-    porcentagem: Optional[int] = 10
     venda: float = 10000.5
+    porcentagem: Optional[int] = 10
     #comissao: float = 1000.05
 
 class FuncionarioBuscaSchema(BaseModel):
@@ -29,8 +29,8 @@ class FuncionarioViewSchema(BaseModel):
     """
     id: int = 1
     nome: str = "Fulano de tal"
-    porcentagem: Optional[int] = 10
     venda: float = 10000.5
+    porcentagem: Optional[int] = 10
     comissao: float = 1000.05
 
 def apresenta_funcionarios(funcionarios: List[Funcionario]):
@@ -41,8 +41,8 @@ def apresenta_funcionarios(funcionarios: List[Funcionario]):
     for funcionario in funcionarios:
         result.append({
             "nome": funcionario.nome,
-            "porcentagem": funcionario.porcentagem,
             "venda": funcionario.venda,
+            "porcentagem": funcionario.porcentagem,
             "comissao": funcionario.comissao,
         })
 
@@ -56,8 +56,8 @@ def apresenta_funcionario(funcionario: Funcionario):
     return {
         "id": funcionario.id,
         "nome": funcionario.nome,
-        "porcentagem": funcionario.porcentagem,
         "venda": funcionario.venda,
+        "porcentagem": funcionario.porcentagem,
         "comissao": funcionario.comissao
     
     }

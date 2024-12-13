@@ -10,7 +10,7 @@ const getList = async () => {
   })
     .then((response) => response.json())
     .then((data) => {
-      data.funcionarios.forEach(item => insertList(item.nome, item.porcentagem, item.venda)) //removido a quantidade
+      data.funcionarios.forEach(item => insertList(item.nome, item.venda, item.porcentagem, item.comissao))
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -30,11 +30,12 @@ getList()
   Função para colocar um item na lista do servidor via requisição POST
   --------------------------------------------------------------------------------------
 */
-const postItem = async (inputWorker, inputQuantity, inputPrice) => {
+const postItem = async (inputFuncionario, inputVenda, inputPorcentagem) => {
   const formData = new FormData();
-  formData.append('nome', inputWorker);
-  formData.append('porcentagem', inputQuantity);
-  formData.append('venda', inputPrice);
+  formData.append('nome', inputFuncionario);
+  formData.append('venda', inputVenda);
+  formData.append('porcentagem', inputPorcentagem);
+  
 
   let url = 'http://127.0.0.1:5000/funcionario';
   fetch(url, {
@@ -106,17 +107,18 @@ const deleteItem = (item) => {
   --------------------------------------------------------------------------------------
 */
 const newItem = () => {
-  let inputWorker = document.getElementById("newInput").value; //nome
-  let inputQuantity = document.getElementById("newQuantity").value; //porcentagem
-  let inputPrice = document.getElementById("newPrice").value; //vendas
+  let inputFuncionario = document.getElementById("novoFuncionario").value; //nome
+  let inputVenda = document.getElementById("novaVenda").value; //vendas
+  let inputPorcentagem = document.getElementById("novaPorcentagem").value; //porcentagem
+  
 
-  if (inputWorker === '') {
+  if (inputFuncionario === '') {
     alert("Escreva o nome de um item!");
-  } else if (isNaN(inputPrice) || isNaN(inputQuantity)) {
+  } else if (isNaN(inputVenda) || isNaN(inputPorcentagem)) {
     alert("Salário e porcentagem precisam ser números!");
   } else {
-    insertList(inputWorker, inputQuantity, inputPrice)
-    postItem(inputWorker, inputQuantity, inputPrice)
+    insertList(inputFuncionario,inputVenda, inputPorcentagem)
+    postItem(inputFuncionario, inputVenda, inputPorcentagem)
     alert("Item adicionado!")
   }
 }
@@ -126,8 +128,8 @@ const newItem = () => {
   Função para inserir items na lista apresentada
   --------------------------------------------------------------------------------------
 */
-const insertList = (nameWorker, price) => {
-  var item = [nameWorker, price]
+const insertList = (nome, venda, porcentagem, comissao) => {
+  var item = [nome, venda, porcentagem , comissao]
   var table = document.getElementById('myTable');
   var row = table.insertRow();
 
@@ -136,9 +138,11 @@ const insertList = (nameWorker, price) => {
     cel.textContent = item[i];
   }
   insertButton(row.insertCell(-1))
-  document.getElementById("newInput").value = "";
-  // document.getElementById("newQuantity").value = "";
-  document.getElementById("newPrice").value = "";
+  document.getElementById("novoFuncionario").value = "";
+  document.getElementById("novaVenda").value = "";
+  document.getElementById("novaPorcentagem").value = "";
 
   removeElement()
 }
+
+// 

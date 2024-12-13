@@ -14,7 +14,7 @@ class Funcionario(Base):
     comissao = Column(Float)
 
 
-    def __init__(self, nome:str, porcentagem:int, venda:float, comissao:float):
+    def __init__(self, nome:str, venda:float, porcentagem:int, comissao:float):
         """
         Cria um Funcionario
 
@@ -25,7 +25,7 @@ class Funcionario(Base):
             data_insercao: data de quando o funcionario foi inserido à base
         """
         self.nome = nome
-        self.porcentagem = porcentagem
         self.venda = venda
+        self.porcentagem = porcentagem
         self.comissao = comissao
 

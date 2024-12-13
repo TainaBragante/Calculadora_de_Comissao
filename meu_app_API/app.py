@@ -37,8 +37,8 @@ def add_funcionario(form: FuncionarioSchema):
     comissao = form.venda * (form.porcentagem / 100)
     funcionario = Funcionario(
         nome=form.nome,
-        porcentagem=form.porcentagem,
         venda=form.venda,
+        porcentagem=form.porcentagem,
         comissao=comissao  # Inclui a comissão calculada
     )
     logger.debug(f"Adicionando funcionario de nome: '{funcionario.nome}'")
