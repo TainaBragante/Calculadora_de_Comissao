@@ -20,9 +20,9 @@ class Funcionario(Base):
 
         Arguments:
             nome: nome do funcionario.
-            porcentagem: porcentagem que se espera comprar daquele funcionario
-            venda: venda esperado para o funcionario
-            data_insercao: data de quando o funcionario foi inserido à base
+            venda: total de vendas realizadas pelo funcionario
+            porcentagem: porcentagem que o funcionario receberá sobre as vendas realizadas
+            comissao: valor calculado de quanto o funcionario irá receber sobre as vendas realizadas 
         """
         self.nome = nome
         self.venda = venda

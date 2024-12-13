@@ -6,16 +6,15 @@ from model.funcionario import Funcionario
 class FuncionarioSchema(BaseModel):
     """ Define como um novo funcionario a ser inserido deve ser representado
     """
-    nome: str = "Fulano de tal"
-    venda: float = 10000.5
-    porcentagem: Optional[int] = 10
-    #comissao: float = 1000.05
+    nome: str = "Jorge Silva"
+    venda: float = 10000
+    porcentagem: float = 10
 
 class FuncionarioBuscaSchema(BaseModel):
     """ Define como deve ser a estrutura que representa a busca. Que será
         feita apenas com base no nome do funcionario.
     """
-    nome: str = "Teste"
+    nome: str = "Jorge Silva"
 
 
 class ListagemFuncionariosSchema(BaseModel):
@@ -28,10 +27,10 @@ class FuncionarioViewSchema(BaseModel):
     """ Define como um funcionario será retornado: funcionario.
     """
     id: int = 1
-    nome: str = "Fulano de tal"
-    venda: float = 10000.5
-    porcentagem: Optional[int] = 10
-    comissao: float = 1000.05
+    nome: str = "Jorge Silva"
+    venda: float = 10000
+    porcentagem: float = 10
+    comissao: float = 1000
 
 def apresenta_funcionarios(funcionarios: List[Funcionario]):
     """ Retorna uma representação do funcionario seguindo o schema definido em

@@ -1,8 +1,8 @@
 # Meu Front
 
-Este pequeno projeto faz parte do material diático da Disciplina **Desenvolvimento Full Stack Básico** 
+Este projeto faz parte do MVP criado para ilustrar os conceitos aprendidos durante o curso de pós-graduação em Desenvolvimento Full Stack.
 
-O objetivo aqui é ilutsrar o conteúdo apresentado na terceira aula.
+O objetivo aqui é ilustrar a interface do MVP de cálculo de comissões de funcionários.
 
 ---
 ## Como executar

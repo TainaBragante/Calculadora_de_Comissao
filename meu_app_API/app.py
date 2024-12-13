@@ -92,9 +92,9 @@ def get_funcionarios():
 @app.get('/funcionario', tags=[funcionario_tag],
          responses={"200": FuncionarioViewSchema, "404": ErrorSchema})
 def get_funcionario(query: FuncionarioBuscaSchema):
-    """Faz a busca por um funcionario a partir do id do funcionario
+    """Faz a busca por um funcionario a partir do nome do funcionario
 
-    Retorna uma representação dos funcionarios e comentários associados.
+    Retorna uma representação do funcionario e suas respectivas informações.
     """
     funcionario_nome = query.nome
     logger.debug(f"Coletando dados sobre funcionario #{funcionario_nome}")
@@ -117,7 +117,7 @@ def get_funcionario(query: FuncionarioBuscaSchema):
 @app.delete('/funcionario', tags=[funcionario_tag],
             responses={"200": FuncionarioDelSchema, "404": ErrorSchema})
 def del_funcionario(query: FuncionarioBuscaSchema):
-    """Deleta um funcionario a partir do nome de funcionario informado
+    """Deleta um funcionario a partir do nome do funcionario
 
     Retorna uma mensagem de confirmação da remoção.
     """

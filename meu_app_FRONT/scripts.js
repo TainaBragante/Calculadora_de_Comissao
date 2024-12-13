@@ -129,7 +129,7 @@ const newItem = () => {
   --------------------------------------------------------------------------------------
 */
 const insertList = (nome, venda, porcentagem, comissao) => {
-  var item = [nome, venda, porcentagem , comissao]
+  var item = [nome, `R$${venda}`, `${porcentagem}%`, `R$${comissao}`];
   var table = document.getElementById('myTable');
   var row = table.insertRow();
 
@@ -145,4 +145,3 @@ const insertList = (nome, venda, porcentagem, comissao) => {
   removeElement()
 }
 
-// 

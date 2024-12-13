@@ -1,8 +1,8 @@
 # Minha API
 
-Este pequeno projeto foi desenvolvido na pós-graduação em Desenvolvimento Full Stack. Trata-se de um MVP criado para ilustrar os conceitos aprendidos durante o curso.
+Este projeto foi desenvolvido na pós-graduação em Desenvolvimento Full Stack. Trata-se de um MVP criado para colocar em prática os conceitos aprendidos durante o curso.
 
-O objetivo aqui é criar uma API funcional que gerencie informações de funcionários, incluindo seus nomes, vendas realizadas, porcentagens de comissão, e calcular automaticamente o valor das comissões. Este projeto visa demonstrar habilidades práticas em desenvolvimento Full Stack com Python, Flask e integração com um frontend simples.
+O objetivo aqui é criar uma API funcional que gerencie informações de funcionários, incluindo seus nomes, vendas realizadas, porcentagens de comissão, e calcular automaticamente o valor das comissões.
 
 ---
 ## Como executar 
