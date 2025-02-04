@@ -22,7 +22,7 @@ const getList = async () => {
   Chamada da função para carregamento inicial dos dados
   --------------------------------------------------------------------------------------
 */
-getList()
+getList() 
 
 
 /*
