@@ -1,6 +1,6 @@
 # MVP - Full Stack Básico
  
- Este pequeno projeto demonstra na prática conceitos essenciais de desenvolvimento **Full Stack Básico**. Trata-se de um MVP (Minimum Viable Product) criado para implementar uma solução funcional para o cálculo de comissões de funcionários.
+ Este [projeto](https://www.youtube.com/watch?v=Fd4ytdZ_Thc) demonstra na prática conceitos essenciais de desenvolvimento **Full Stack Básico**. Trata-se de um MVP (Minimum Viable Product) criado para implementar uma solução funcional para o cálculo de comissões de funcionários.
 
 
 ## Como executar o MVP
